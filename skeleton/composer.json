@@ -1,0 +1,35 @@
+{
+    "require": {
+        "doctrine/orm": "^2.6",
+        "psr/http-message": "^1.0",
+        "nyholm/psr7": "^1.2",
+        "nyholm/psr7-server": "^0.4.1",
+        "zendframework/zend-httphandlerrunner": "^1.1",
+        "psr/http-server-handler": "^1.0",
+        "laminas/laminas-httphandlerrunner": "^1.1",
+        "php-di/php-di": "^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5",
+        "squizlabs/php_codesniffer": "^3.5",
+        "phan/phan": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "shineblue\\": "app/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit tests\\TestShine.php",
+        "cs": "phpcs --standard=PSR12 app",
+        "phan": "phan --allow-polyfill-parser",
+        "check": [
+            "@phan",
+            "@cs",
+            "@test"
+        ]
+    },
+    "scripts-descriptions": {
+        "check": "Roda as verificações do código. PHAN, PHPCS e PHPUNIT"
+    }
+}
